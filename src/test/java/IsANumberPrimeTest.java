@@ -13,5 +13,6 @@ public class IsANumberPrimeTest {
         Assert.assertEquals(false, IsANumberPrime.isPrime(-5));
         Assert.assertEquals(true, IsANumberPrime.isPrime(2));
         Assert.assertEquals(false, IsANumberPrime.isPrime(0));
+        Assert.assertFalse(IsANumberPrime.isPrime(0));
     }
 }
