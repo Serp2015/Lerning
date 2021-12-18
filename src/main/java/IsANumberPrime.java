@@ -1,5 +1,8 @@
 public class IsANumberPrime {
+
     public static void main(String[] args) {
+        IsANumberPrime isANumberPrime = new IsANumberPrime();
+        System.out.println(isANumberPrime.hashCode());
     }
 
     public static boolean isPrime(int num) {
