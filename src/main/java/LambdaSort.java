@@ -1,6 +1,9 @@
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
+import java.util.function.Function;
+import java.util.stream.Stream;
 
 public class LambdaSort {
     public static void main(String[] args) {
@@ -11,6 +14,12 @@ public class LambdaSort {
         System.out.println(list);
         Collections.sort(list, (a, b) -> a.compareTo(b));
         System.out.println(list);
+        Function<String, Integer> stringToInteger = Integer::valueOf;
+        System.out.println(stringToInteger.apply("123"));
+        String[] str = Stream.of("Hello", "world")
+                .flatMap(x -> Arrays.stream(x.split("")))
+                .toArray(String[]::new);
+        Arrays.stream(str).forEach(x -> System.out.print(x + " "));
     }
 }
 
