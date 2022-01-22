@@ -25,16 +25,19 @@ public class IoNio {
 
     public static void fileListFiles() {
         File file = new File("d:\\Distr");
-        File[] files = file.listFiles();
-        for (File f : files) {
-            if (f.isDirectory()) {
-                System.out.println(f);
+        File[] files = file.listFiles(new FileFilter() {
+            @Override
+            public boolean accept(File pathname) {
+                return pathname.getName().contains("mp4");
             }
-        }
+        });
+//        for (File f : files) {
+//            if (f.isDirectory()) {
+//                System.out.println(f);
+//            }
+//        }
         for (File f : files) {
-            if (f.isFile() && f.getName().contains("mp4")) {
-                System.out.println(f.getName());
-            }
+            System.out.println(f.getName());
         }
     }
 
