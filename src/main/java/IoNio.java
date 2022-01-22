@@ -9,6 +9,33 @@ public class IoNio {
 //        bufferedReader();
 //        reader();
 //        encodeReader();
+//        fileListString();
+        fileListFiles();
+    }
+
+    public static void fileListString() {
+        File file = new File("d:\\Distr");
+        String[] listFiles = file.list();
+        for (String s : listFiles) {
+            if (s.contains(".mp4")) {
+                System.out.println(s);
+            }
+        }
+    }
+
+    public static void fileListFiles() {
+        File file = new File("d:\\Distr");
+        File[] files = file.listFiles();
+        for (File f : files) {
+            if (f.isDirectory()) {
+                System.out.println(f);
+            }
+        }
+        for (File f : files) {
+            if (f.isFile() && f.getName().contains("mp4")) {
+                System.out.println(f.getName());
+            }
+        }
     }
 
     public static void encodeReader() {
